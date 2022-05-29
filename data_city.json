@@ -1,0 +1,1 @@
+[{"model": "scraping.city", "pk": 1, "fields": {"name": "Tashkent", "slug": "tashkent"}}, {"model": "scraping.city", "pk": 2, "fields": {"name": "Samarqand", "slug": "samarqand"}}, {"model": "scraping.city", "pk": 3, "fields": {"name": "Andijon", "slug": "andijon"}}]

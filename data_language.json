@@ -1,0 +1,1 @@
+[{"model": "scraping.language", "pk": 1, "fields": {"name": "Python", "slug": "python"}}, {"model": "scraping.language", "pk": 2, "fields": {"name": "Java", "slug": "java"}}, {"model": "scraping.language", "pk": 3, "fields": {"name": "Android developer", "slug": "android_developer"}}, {"model": "scraping.language", "pk": 4, "fields": {"name": "Javascript", "slug": "javascript"}}]
