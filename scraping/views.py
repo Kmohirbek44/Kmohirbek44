@@ -2,12 +2,14 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import DetailView, ListView
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from .models import Vakation, Resume, Document
 
-from .models import Vakation, Resume
-from .form import findForm, resume_form
+from .form import findForm, resume_form,  DocumentForm
 from django.http import HttpResponse
 from django.views.generic import View
 
@@ -104,6 +106,12 @@ def resume_edit(request):
 
 
 
+def model_form_upload(request):
+
+    form = Document.objects.first()
+    return render(request, 'scraping/download.html', {
+        'form': form
+    })
 
 
 

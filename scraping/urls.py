@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from .views import scraping_home, L_List, resume_edit, resume, resume_list, resume_home, GeneratePdf
+from .views import scraping_home, L_List, resume_edit, resume, resume_list, resume_home, GeneratePdf,model_form_upload
 
 app_name = 'scraping'
 
@@ -14,6 +14,6 @@ urlpatterns = [
     path('resume_edit/', resume_edit, name='resume_edit'),
     path('resume_home', resume_list.as_view(), name='resume_list'),
     path('page/<int:page>/',resume_home,name='resume_home'),
-    path('pdf/',GeneratePdf.as_view()),
+    path('apks/', model_form_upload, name='download_apk'),
 
 ]

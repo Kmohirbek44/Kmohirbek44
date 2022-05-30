@@ -8,7 +8,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link href="{% static 'css/auth.css'%}" rel="stylesheet"/>
+           <link href="{% static 'css/auth.css'%}" rel="stylesheet"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
             crossorigin="anonymous"></script>
@@ -30,16 +30,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                  {%if user.is_authenticated%}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'accounts:update' %} ">Sizning kabinetingiz
                         <i class="fas fa-user-circle"></i>
                     </a>
                 </li>
+                {%endif%}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url  'scraping:resume_list' %} ">Ishchi qidiryapsizmi <i class="fas"></i></a>
                 </li>
                  <li class="nav-item">
                     <a class="nav-link" href="{% url  'scraping:resume' %} ">Resume <i class="fas"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url  'scraping:download_apk' %} ">Dowload <i class="fas"></i></a>
                 </li>
                 {%if user.is_authenticated%}
                 <li class="nav-item">

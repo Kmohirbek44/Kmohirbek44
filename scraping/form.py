@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserChangeForm
 
-from .models import City, Language, Vakation, Resume
+from .models import City, Language, Vakation, Resume, Document
 
 
 class findForm(forms.Form):
@@ -28,3 +28,9 @@ class resume_form(UserChangeForm):
         model=Resume
         fields=('name','phone_number','email','experience','education','city',
                 'language','skills','profession','telegram_link','linked','about_meu')
+
+
+class DocumentForm(forms.ModelForm):
+    class Meta:
+        model = Document
+        fields = ('description', 'document', )
