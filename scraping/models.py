@@ -37,8 +37,8 @@ class Language(models.Model):
         super().save(*args,**kwargs)
 class Vakation(models.Model):
     url=models.URLField(verbose_name='url')
-    title=models.CharField(max_length=20,blank=True)
-    company=models.CharField(max_length=20,blank=True)
+    title=models.CharField(max_length=200,blank=True)
+    company=models.CharField(max_length=200,blank=True)
     description=models .TextField(blank=True)
     city=models.ForeignKey('City',on_delete=models.CASCADE,blank=True)
     language=models.ForeignKey('Language',on_delete=models.CASCADE,blank=True)
