@@ -12,7 +12,7 @@ urlpatterns = [
     path('resume/', resume, name='resume'),
     path('resume_search/', resume, name='resume_search'),
     path('resume_edit/', resume_edit, name='resume_edit'),
-    path('resume_home', resume_list.as_view(), name='resume_list'),
+    path('resume_home/', resume_home, name='resume_list'),
     path('page/<int:page>/',resume_home,name='resume_home'),
     path('apks/', model_form_upload, name='download_apk'),
 

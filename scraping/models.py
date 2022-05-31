@@ -68,7 +68,7 @@ class Resume(models.Model):
     profession=models.CharField(max_length=128)
     phone_number = models.CharField(max_length=128,default='+998')
     email=models.EmailField(unique=False)
-
+    adress=models.CharField(max_length=128)
     experience=models.TextField()
     education = models.TextField()
     skills=models.TextField()

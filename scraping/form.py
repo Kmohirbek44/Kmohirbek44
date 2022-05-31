@@ -27,7 +27,7 @@ class resume_form(UserChangeForm):
     class Meta:
         model=Resume
         fields=('name','phone_number','email','experience','education','city',
-                'language','skills','profession','telegram_link','linked','about_meu')
+                'language','skills','profession','telegram_link','linked','about_meu','adress')
 
 
 class DocumentForm(forms.ModelForm):
