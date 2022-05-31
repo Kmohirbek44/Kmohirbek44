@@ -66,7 +66,7 @@ def uzjobble(url,city=None,language=None):
 
             vacations=soup.find_all('article','yKsady')
 
-            print(vacations,'1111111111')
+
 
             for vacation in vacations:
 

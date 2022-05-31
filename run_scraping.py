@@ -62,10 +62,11 @@ loop.close()
 for job in jobs:
 
     v = scraping.models.Vakation(**job)
+
     try:
         v.save()
     except DatabaseError:
-        v.save()
+        pass
 
 # from send_email import send
 #
