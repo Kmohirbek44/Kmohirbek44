@@ -67,6 +67,6 @@ for job in jobs:
     except DatabaseError:
         pass
 
-from send_email import send
-
-send()
+# from send_email import send
+#
+# send()
