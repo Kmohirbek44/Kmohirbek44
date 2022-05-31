@@ -1,6 +1,13 @@
 {%extends "base.html"%}
-{%block content%}
 {% load static %}
+
+{%block head%}
+<meta charset="UTF-8">
+<title>Resume/CV Design</title>
+<link rel="stylesheet" href="{%static 'css/resume.css'%}">
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+{%endblock%}
+{%block content%}
 
 <!--
 	Eventually by HTML5 UP
@@ -52,8 +59,8 @@
      <div class="resume_content" style="width: 400px" >
        <div class="resume_item resume_info">
          <div class="title">
-           <h1>{{resume.name}}</h1>
-           <h5>{{resume.profession}}</h5>
+           <p class="bold">{{resume.name}}</p>
+           <p class="regular">{{resume.profession}}</p>
          </div>
          <ul>
            <li>
@@ -90,17 +97,6 @@
            </li>
          </ul>
        </div>
-           <div class="title">
-           <p class="bold">Ozi haqida</p>
-
-          <ul>
-           <li>
-        <p>{{resume.about_meu}}</p>
-
-
-
-        </li>
-         </ul>
        <div class="resume_item resume_skills">
          <div class="title">
            <p class="bold">skill's</p>
@@ -121,22 +117,25 @@
          <ul>
            <li>
              <div class="icon">
-               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
 </svg>
-
              </div>
-            <div class="data">
-
+             <div class="data">
+               <p class="semi-bold">Telegram</p>
                <p>{{resume.telegram_link}}</p>
              </div>
            </li>
            <li>
+
+           </li>
+           <li >
              <div class="icon">
-               <i class="fab fa-linkedin"></i>
+               <i class="fab fa-linkedin" ></i>
              </div>
              <div class="data">
-                 <p>{{resume.linked}}</p>
+               <p class="semi-bold">Linkedin</p>
+               <p>{{resume.linked}}</p>
              </div>
            </li>
          </ul>
@@ -145,7 +144,11 @@
   </div>
   <div class="resume_right">
     <div class="resume_item resume_about">
-
+        <div class="title">
+           <p class="bold">About us</p>
+         </div>
+        <p>{{resume.about_meu}}</p>
+    </div>
     <div class="resume_item resume_work">
         <div class="title">
            <p class="bold">Work Experience</p>
@@ -184,40 +187,6 @@
 </div>
 
 
-{%endfor%}
-
-<br>
-{% if page_obj %}
-<div class="row">
-
-<nav aria-label="Page navigation example">
-  <ul class="pagination ">
-      {% if page_obj.has_previous %}
-    <li class="page-item ">
-      <a class="page-link" href="?city={{city}}&language={{language}}&page={{ page_obj.previous_page_number }} " aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-       {% endif %}
-      </a>
-    </li>
-      {% for page in page_obj.paginator.page_range %}
-
-    <li class="page-item {% if page == page_obj.number %} active {% endif %}  "><a class="page-link" href="?city={{city}}&language={{language}}&page={{ page }}">{{ page }} </a></li>
-      {% endfor %}
-    {% if page_obj.has_next %}
-    <li class="page-item">
-      <a class="page-link" href="?city={{city}}&language={{language}}&page={{ page_obj.next_page_number }}" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-      {% endif %}
-  </ul>
-</nav></div>
-
-{% endif %}
-
-
 <!--<div class="row">-->
 <!--    <div class="col">-->
 <!--        <div class="pagination">-->
@@ -243,8 +212,9 @@
 
 
 
-
+{%endfor%}
 {%endblock%}
+
 
 
 
