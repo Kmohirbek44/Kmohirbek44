@@ -13,7 +13,7 @@ import django
 django.setup()
 import scraping.models
 from scraping.parsers import *
-
+scraping.models.Vakation.objects.all().delete()
 parser = (
     (hh, 'hh'),
     (ishkop, 'ishkop'),
